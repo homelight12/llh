@@ -1,0 +1,223 @@
+/* ===== ТОЛЬКО ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px) ===== */
+@media (max-width: 768px) {
+    /* ===== ШАПКА ===== */
+    .header-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+    
+    /* Логотип - первый */
+    .logo {
+        order: 1 !important;
+        font-size: 28px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    /* Навигация - меняем порядок */
+    .nav {
+        order: 2 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    /* 1. Все ИКОНКИ (с сердечком, профилем, корзиной) - собираем в первый ряд */
+    .nav .icon,
+    .nav .icon-favorite,
+    .nav .cart-icon {
+        order: 1 !important;
+        display: inline-flex !important;
+        margin: 0 12px !important;
+    }
+    
+    /* 2. Все ТЕКСТОВЫЕ ссылки - собираем во второй ряд */
+    .nav a:not(.icon):not(.icon-favorite):not(.cart-icon) {
+        order: 2 !important;
+        display: inline-flex !important;
+        margin: 10px 12px 0 12px !important;
+        color: #111111 !important;
+        font-size: 14px !important;
+        text-decoration: none !important;
+    }
+    
+    /* Иконки - черного цвета, одинакового размера */
+    .nav .icon svg,
+    .nav .icon-favorite svg,
+    .nav .cart-icon svg {
+        stroke: #111111 !important;
+        stroke-width: 1.8 !important;
+        fill: none !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    /* Сердечко делаем черным (без заливки) */
+    .nav .icon-favorite svg {
+        fill: none !important;
+    }
+    
+    /* Убираем стандартные подчеркивания */
+    .nav a {
+        text-decoration: none !important;
+    }
+    
+    /* ===== ПОИСК ===== */
+    .search-wrapper {
+        margin-top: 5px !important;
+        padding: 0 15px !important;
+    }
+    
+    .search-box {
+        width: 100% !important;
+    }
+    
+    .search-box input {
+        width: 100% !important;
+        padding: 10px 15px !important;
+        font-size: 14px !important;
+    }
+    
+    /* ===== ГЕРОЙ СЕКЦИЯ ===== */
+    .hero {
+        padding: 10px 0 30px !important;
+    }
+    
+    .hero h1 {
+        font-size: 48px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .hero-text {
+        font-size: 16px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* ===== КНОПКИ ===== */
+    .card button,
+    .btn-cart,
+    .subscribe-btn,
+    .checkout-btn,
+    .save-btn,
+    .auth-btn,
+    .cart button,
+    .favorite-card button {
+        background: #a6a86c !important;
+        color: #111111 !important;
+        border: none !important;
+    }
+    
+    .card button:hover,
+    .btn-cart:hover,
+    .subscribe-btn:hover,
+    .checkout-btn:hover,
+    .save-btn:hover,
+    .auth-btn:hover {
+        background: #8b8d5a !important;
+        color: #111111 !important;
+    }
+    
+    /* ===== ФУТЕР ===== */
+    .footer-content {
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center !important;
+    }
+    
+    .footer-links {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 40px !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .footer-links .col {
+        align-items: center !important;
+    }
+}
+
+/* ===== ДЛЯ ЭКРАНОВ 2556x1179 ===== */
+@media (min-width: 1920px) and (max-width: 2560px) {
+    .container {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+    }
+    
+    .header-row {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 20px 0 !important;
+    }
+    
+    .nav {
+        gap: 40px !important;
+    }
+    
+    .nav a {
+        font-size: 16px !important;
+    }
+    
+    .nav .icon svg,
+    .nav .icon-favorite svg,
+    .nav .cart-icon svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .catalog-grid,
+    .favorites-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 40px !important;
+    }
+    
+    .hero h1 {
+        font-size: 64px !important;
+    }
+    
+    .hero-text {
+        font-size: 20px !important;
+    }
+    
+    .card button,
+    .btn-cart,
+    .subscribe-btn {
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+    }
+    
+    .footer-content {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        gap: 60px !important;
+    }
+}
+
+/* ===== ДЛЯ ОЧЕНЬ ШИРОКИХ ЭКРАНОВ ===== */
+@media (min-width: 2556px) {
+    .container {
+        max-width: 1600px !important;
+        margin: 0 auto !important;
+        padding: 0 60px !important;
+    }
+    
+    .catalog-grid,
+    .favorites-grid {
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 48px !important;
+    }
+    
+    .hero h1 {
+        font-size: 80px !important;
+    }
+    
+    .hero-text {
+        font-size: 24px !important;
+    }
+}
