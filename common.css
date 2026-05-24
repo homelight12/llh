@@ -1,148 +1,64 @@
-/* ===== ТОЛЬКО ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px) ===== */
+/* common.css - единые стили для шапки и футера */
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (только для экранов до 768px) ===== */
 @media (max-width: 768px) {
-    /* ===== ШАПКА ===== */
+    /* ШАПКА: логотип → иконки → навигация → поиск */
     .header-row {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
     
-    /* 1. Логотип - первый */
     .logo {
-        order: 1 !important;
-        font-size: 28px !important;
+        order: 1;
     }
     
-    /* Перестраиваем nav во flex-колонку, чтобы управлять порядком */
-    .nav {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
+    .header-icons {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
     }
     
-    /* 2. Иконки - второй ряд (вытаскиваем их в отдельный flex-контейнер) */
-    /* Для этого оборачиваем иконки в невидимый контейнер с помощью display: contents */
-    
-    /* Сначала скрываем обычный порядок */
-    .nav {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-    }
-    
-    /* Все текстовые ссылки (каталог, доставка, о нас, контакты) - третий ряд */
-    .nav a[href="catalog.html"],
-    .nav a[href="delivery.html"],
-    .nav a[href="about.html"],
-    .nav a[href="contact.html"] {
-        order: 3 !important;
-        display: inline-block !important;
-        margin: 0 12px !important;
-        color: #111111 !important;
-        font-size: 14px !important;
-        text-decoration: none !important;
-    }
-    
-    /* Иконки (избранное, профиль, корзина) - делаем их вторым рядом */
-    /* Используем order и группируем через родителя */
-    .nav a.icon-favorite,
-    .nav a.icon,
-    .nav a.cart-icon {
-        order: 2 !important;
-        display: inline-flex !important;
-        margin: 0 8px !important;
-    }
-    
-    /* Задаем им правильный порядок внутри второго ряда */
-    .nav a.icon-favorite { order: 1 !important; }
-    .nav a.icon:not(.icon-favorite):not(.cart-icon) { order: 2 !important; }
-    .nav a.cart-icon { order: 3 !important; }
-    
-    /* Иконки - черного цвета */
-    .nav a.icon-favorite svg,
-    .nav a.icon svg,
-    .nav a.cart-icon svg {
-        stroke: #111111 !important;
-        stroke-width: 1.8 !important;
+    .header-icons .icon svg {
+        stroke: #111 !important;
         fill: none !important;
-        width: 22px !important;
-        height: 22px !important;
     }
     
-    /* 4. Строка поиска - четвертая */
+    .nav {
+        order: 3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+    
     .search-wrapper {
-        margin-top: 10px !important;
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
+        order: 4;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
     }
     
-    .search-box {
-        width: 100% !important;
-        max-width: 300px !important;
-    }
-    
-    /* ===== ГЕРОЙ СЕКЦИЯ ===== */
-    .hero {
-        padding: 10px 0 30px !important;
-    }
-    
-    .hero h1 {
-        font-size: 48px !important;
-        margin-bottom: 8px !important;
-    }
-    
-    .hero-text {
-        font-size: 16px !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-        position: relative !important;
-        top: -5px !important;
-    }
-    
-    /* ===== КНОПКИ ===== */
-    .card button,
-    .btn-cart,
-    .subscribe-btn,
-    .checkout-btn,
-    .save-btn,
-    .auth-btn,
-    .cart button,
-    .favorite-card button {
-        background: #a6a86c !important;
-        color: #111111 !important;
-        border: none !important;
-    }
-    
-    .card button:hover,
-    .btn-cart:hover,
-    .subscribe-btn:hover,
-    .checkout-btn:hover,
-    .save-btn:hover,
-    .auth-btn:hover {
-        background: #8b8d5a !important;
-        color: #111111 !important;
-    }
-    
-    /* ===== ФУТЕР ===== */
+    /* ФУТЕР: две колонки */
     .footer-content {
-        flex-direction: column !important;
-        gap: 30px !important;
-        text-align: center !important;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
     
     .footer-links {
-        display: flex !important;
         flex-direction: row !important;
-        justify-content: center !important;
-        gap: 40px !important;
-        flex-wrap: wrap !important;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
     }
     
     .footer-links .col {
-        align-items: center !important;
+        align-items: center;
     }
 }
