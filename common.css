@@ -1,64 +1,122 @@
-/* common.css - единые стили для шапки и футера */
+/* common.css - единые стили для всех страниц */
 
-/* ===== МОБИЛЬНАЯ ВЕРСИЯ (только для экранов до 768px) ===== */
+/* ===== ТОЛЬКО ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px) ===== */
 @media (max-width: 768px) {
-    /* ШАПКА: логотип → иконки → навигация → поиск */
+    
+    /* ===== ШАПКА: заставляем иконки быть в один ряд ===== */
     .header-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
     }
     
+    /* Логотип - первый */
     .logo {
-        order: 1;
+        order: 1 !important;
     }
     
-    .header-icons {
-        order: 2;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        width: 100%;
-    }
-    
-    .header-icons .icon svg {
-        stroke: #111 !important;
-        fill: none !important;
-    }
-    
+    /* НАВИГАЦИЯ - заставляем иконки быть в ОДНУ СТРОКУ */
     .nav {
-        order: 3;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        width: 100%;
+        order: 2 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
     }
     
-    .search-wrapper {
-        order: 4;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
+    /* ВСЕ иконки в nav - в одну строку, черного цвета */
+    .nav .icon,
+    .nav .icon-favorite,
+    .nav .cart-icon {
+        display: inline-flex !important;
+        flex-shrink: 0 !important;
     }
     
-    /* ФУТЕР: две колонки */
+    .nav .icon svg,
+    .nav .icon-favorite svg,
+    .nav .cart-icon svg {
+        stroke: #111111 !important;
+        stroke-width: 1.8 !important;
+        fill: none !important;
+        width: 22px !important;
+        height: 22px !important;
+    }
+    
+    /* Текстовые ссылки - тоже в одну строку */
+    .nav a:not(.icon):not(.icon-favorite):not(.cart-icon) {
+        display: inline-block !important;
+        color: #111111 !important;
+        font-size: 14px !important;
+        text-decoration: none !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* ===== ГЕРОЙ СЕКЦИЯ - поднимаем текст вверх ===== */
+    .hero {
+        padding: 10px 0 30px !important;
+    }
+    
+    .hero h1 {
+        font-size: 48px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .hero-text {
+        font-size: 16px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        position: relative !important;
+        top: -5px !important;
+    }
+    
+    /* ===== КНОПКИ: фон зеленый, текст черный ===== */
+    .card button,
+    .btn-cart,
+    .subscribe-btn,
+    .checkout-btn,
+    .save-btn,
+    .auth-btn,
+    .cart button,
+    .favorite-card button {
+        background: #a6a86c !important;
+        color: #111111 !important;
+        border: none !important;
+    }
+    
+    /* ===== ФУТЕР ===== */
     .footer-content {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center !important;
     }
     
     .footer-links {
+        display: flex !important;
         flex-direction: row !important;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
+        justify-content: center !important;
+        gap: 40px !important;
+        flex-wrap: wrap !important;
     }
     
     .footer-links .col {
-        align-items: center;
+        align-items: center !important;
+    }
+}
+
+/* ===== ДЛЯ ЭКРАНОВ 2556x1179 ===== */
+@media (min-width: 1921px) {
+    .container {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+    }
+    
+    .catalog-grid,
+    .favorites-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 40px !important;
     }
 }
