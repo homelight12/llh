@@ -7,96 +7,144 @@
         align-items: center !important;
         gap: 15px !important;
     }
-    
+
     /* Логотип - первый */
     .logo {
         order: 1 !important;
         font-size: 28px !important;
         margin-bottom: 5px !important;
+        text-align: center !important;
     }
-    
-    /* Навигация - меняем порядок */
+
+    /* Навигация: переключаем на колонку, чтобы разделить ряды */
     .nav {
         order: 2 !important;
         display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
+        flex-direction: column !important;
         align-items: center !important;
+        justify-content: center !important;
         width: 100% !important;
+        gap: 12px !important;
     }
-    
-    /* 1. Все ИКОНКИ (с сердечком, профилем, корзиной) - собираем в первый ряд */
+
+    /* ---- РЯД 1: ВСЕ ИКОНКИ (сердце, профиль, корзина) ---- */
+    /* Группируем их в один горизонтальный ряд */
     .nav .icon,
     .nav .icon-favorite,
     .nav .cart-icon {
+        display: inline-flex !important;
+        margin: 0 12px !important;
+    }
+
+    /* Оборачиваем все иконки в flex-строку */
+    .nav {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Но нам нужно 2 ряда: иконки → ссылки.
+       Задаём принудительный порядок: сначала все элементы с иконками, потом все без иконок */
+    .nav a:has(svg) {
         order: 1 !important;
         display: inline-flex !important;
         margin: 0 12px !important;
     }
-    
-    /* 2. Все ТЕКСТОВЫЕ ссылки - собираем во второй ряд */
-    .nav a:not(.icon):not(.icon-favorite):not(.cart-icon) {
+
+    .nav a:not(:has(svg)) {
         order: 2 !important;
         display: inline-flex !important;
-        margin: 10px 12px 0 12px !important;
+        margin: 0 12px !important;
         color: #111111 !important;
         font-size: 14px !important;
         text-decoration: none !important;
     }
-    
-    /* Иконки - черного цвета, одинакового размера */
-    .nav .icon svg,
-    .nav .icon-favorite svg,
-    .nav .cart-icon svg {
+
+    /* Сброс порядка, чтобы ссылки не разбегались */
+    .nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px 20px !important;
+    }
+
+    /* Иконки: чёрные, без фона */
+    .nav a svg {
         stroke: #111111 !important;
         stroke-width: 1.8 !important;
         fill: none !important;
         width: 24px !important;
         height: 24px !important;
+        display: block !important;
     }
-    
-    /* Сердечко делаем черным (без заливки) */
+
+    /* Сердечко не залито */
     .nav .icon-favorite svg {
         fill: none !important;
     }
-    
-    /* Убираем стандартные подчеркивания */
+
+    /* Убираем лишние подчёркивания */
     .nav a {
         text-decoration: none !important;
     }
-    
-    /* ===== ПОИСК ===== */
+
+    /* ===== ПОИСК — остаётся нормальной строкой ===== */
     .search-wrapper {
-        margin-top: 5px !important;
-        padding: 0 15px !important;
+        order: 3 !important;
+        margin-top: 10px !important;
+        width: 100% !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
     }
-    
+
     .search-box {
+        display: flex !important;
+        align-items: center !important;
+        background: #f5f5f5 !important;
+        border-radius: 30px !important;
+        padding: 8px 16px !important;
+        gap: 10px !important;
         width: 100% !important;
+        box-sizing: border-box !important;
     }
-    
+
+    .search-box svg {
+        width: 20px !important;
+        height: 20px !important;
+        stroke: #888 !important;
+        flex-shrink: 0 !important;
+    }
+
     .search-box input {
+        border: none !important;
+        background: transparent !important;
+        outline: none !important;
+        font-size: 16px !important;
         width: 100% !important;
-        padding: 10px 15px !important;
+        padding: 6px 0 !important;
+    }
+
+    .search-box input::placeholder {
+        color: #aaa !important;
         font-size: 14px !important;
     }
-    
+
     /* ===== ГЕРОЙ СЕКЦИЯ ===== */
     .hero {
         padding: 10px 0 30px !important;
     }
-    
+
     .hero h1 {
         font-size: 48px !important;
         margin-bottom: 8px !important;
     }
-    
+
     .hero-text {
         font-size: 16px !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-    
+
     /* ===== КНОПКИ ===== */
     .card button,
     .btn-cart,
@@ -110,7 +158,7 @@
         color: #111111 !important;
         border: none !important;
     }
-    
+
     .card button:hover,
     .btn-cart:hover,
     .subscribe-btn:hover,
@@ -120,14 +168,14 @@
         background: #8b8d5a !important;
         color: #111111 !important;
     }
-    
+
     /* ===== ФУТЕР ===== */
     .footer-content {
         flex-direction: column !important;
         gap: 30px !important;
         text-align: center !important;
     }
-    
+
     .footer-links {
         display: flex !important;
         flex-direction: row !important;
@@ -135,7 +183,7 @@
         gap: 40px !important;
         flex-wrap: wrap !important;
     }
-    
+
     .footer-links .col {
         align-items: center !important;
     }
@@ -148,50 +196,50 @@
         margin: 0 auto !important;
         padding: 0 40px !important;
     }
-    
+
     .header-row {
         max-width: 1400px !important;
         margin: 0 auto !important;
         padding: 20px 0 !important;
     }
-    
+
     .nav {
         gap: 40px !important;
     }
-    
+
     .nav a {
         font-size: 16px !important;
     }
-    
+
     .nav .icon svg,
     .nav .icon-favorite svg,
     .nav .cart-icon svg {
         width: 24px !important;
         height: 24px !important;
     }
-    
+
     .catalog-grid,
     .favorites-grid {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 40px !important;
     }
-    
+
     .hero h1 {
         font-size: 64px !important;
     }
-    
+
     .hero-text {
         font-size: 20px !important;
     }
-    
+
     .card button,
     .btn-cart,
     .subscribe-btn {
         padding: 12px 24px !important;
         font-size: 16px !important;
     }
-    
+
     .footer-content {
         max-width: 1400px !important;
         margin: 0 auto !important;
@@ -206,17 +254,17 @@
         margin: 0 auto !important;
         padding: 0 60px !important;
     }
-    
+
     .catalog-grid,
     .favorites-grid {
         grid-template-columns: repeat(5, 1fr) !important;
         gap: 48px !important;
     }
-    
+
     .hero h1 {
         font-size: 80px !important;
     }
-    
+
     .hero-text {
         font-size: 24px !important;
     }
