@@ -8,29 +8,63 @@
         gap: 15px !important;
     }
     
-    /* Логотип - первый (сверху) */
+    /* 1. Логотип - первый */
     .logo {
         order: 1 !important;
         font-size: 28px !important;
-        margin-bottom: 5px !important;
     }
     
-    /* Контейнер иконок (избранное, корзина, профиль) - второй ряд, по центру */
-    .nav-icons {
-        order: 2 !important;
+    /* Перестраиваем nav во flex-колонку, чтобы управлять порядком */
+    .nav {
         display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
+        flex-direction: column !important;
         align-items: center !important;
-        gap: 25px !important;
+        gap: 15px !important;
         width: 100% !important;
-        margin-bottom: 5px !important;
     }
+    
+    /* 2. Иконки - второй ряд (вытаскиваем их в отдельный flex-контейнер) */
+    /* Для этого оборачиваем иконки в невидимый контейнер с помощью display: contents */
+    
+    /* Сначала скрываем обычный порядок */
+    .nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    /* Все текстовые ссылки (каталог, доставка, о нас, контакты) - третий ряд */
+    .nav a[href="catalog.html"],
+    .nav a[href="delivery.html"],
+    .nav a[href="about.html"],
+    .nav a[href="contact.html"] {
+        order: 3 !important;
+        display: inline-block !important;
+        margin: 0 12px !important;
+        color: #111111 !important;
+        font-size: 14px !important;
+        text-decoration: none !important;
+    }
+    
+    /* Иконки (избранное, профиль, корзина) - делаем их вторым рядом */
+    /* Используем order и группируем через родителя */
+    .nav a.icon-favorite,
+    .nav a.icon,
+    .nav a.cart-icon {
+        order: 2 !important;
+        display: inline-flex !important;
+        margin: 0 8px !important;
+    }
+    
+    /* Задаем им правильный порядок внутри второго ряда */
+    .nav a.icon-favorite { order: 1 !important; }
+    .nav a.icon:not(.icon-favorite):not(.cart-icon) { order: 2 !important; }
+    .nav a.cart-icon { order: 3 !important; }
     
     /* Иконки - черного цвета */
-    .nav-icons .icon svg,
-    .nav-icons .icon-favorite svg,
-    .nav-icons .cart-icon svg {
+    .nav a.icon-favorite svg,
+    .nav a.icon svg,
+    .nav a.cart-icon svg {
         stroke: #111111 !important;
         stroke-width: 1.8 !important;
         fill: none !important;
@@ -38,23 +72,17 @@
         height: 22px !important;
     }
     
-    /* Навигационные ссылки (каталог, доставка, о нас, контакты) - третий ряд, по центру */
-    .nav-links {
-        order: 3 !important;
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 25px !important;
-        flex-wrap: wrap !important;
+    /* 4. Строка поиска - четвертая */
+    .search-wrapper {
+        margin-top: 10px !important;
         width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
     }
     
-    /* Текстовые ссылки - черные */
-    .nav-links a {
-        color: #111111 !important;
-        font-size: 14px !important;
-        text-decoration: none !important;
+    .search-box {
+        width: 100% !important;
+        max-width: 300px !important;
     }
     
     /* ===== ГЕРОЙ СЕКЦИЯ ===== */
@@ -116,103 +144,5 @@
     
     .footer-links .col {
         align-items: center !important;
-    }
-}
-
-/* ===== ДЛЯ ЭКРАНОВ 2556x1179 (MacBook Pro 14"/16") ===== */
-@media (min-width: 1920px) and (max-width: 2560px) {
-    /* Общий контейнер */
-    .container {
-        max-width: 1400px !important;
-        margin: 0 auto !important;
-        padding: 0 40px !important;
-    }
-    
-    /* Шапка - более просторная */
-    .header-row {
-        max-width: 1400px !important;
-        margin: 0 auto !important;
-        padding: 20px 0 !important;
-    }
-    
-    /* Навигация - увеличенные отступы */
-    .nav {
-        gap: 40px !important;
-    }
-    
-    .nav a {
-        font-size: 16px !important;
-    }
-    
-    /* Иконки чуть крупнее */
-    .nav-icons .icon svg,
-    .nav-icons .icon-favorite svg,
-    .nav-icons .cart-icon svg {
-        width: 24px !important;
-        height: 24px !important;
-    }
-    
-    /* Сетка каталога - 4 карточки в ряд */
-    .catalog-grid,
-    .favorites-grid {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 40px !important;
-    }
-    
-    /* Карточки товаров */
-    .card {
-        transition: transform 0.2s ease !important;
-    }
-    
-    .card:hover {
-        transform: translateY(-4px) !important;
-    }
-    
-    /* Герой секция - крупнее */
-    .hero h1 {
-        font-size: 64px !important;
-    }
-    
-    .hero-text {
-        font-size: 20px !important;
-    }
-    
-    /* Кнопки - удобнее для клика */
-    .card button,
-    .btn-cart,
-    .subscribe-btn {
-        padding: 12px 24px !important;
-        font-size: 16px !important;
-    }
-    
-    /* Футер */
-    .footer-content {
-        max-width: 1400px !important;
-        margin: 0 auto !important;
-        gap: 60px !important;
-    }
-}
-
-/* ===== ДЛЯ ОЧЕНЬ ШИРОКИХ ЭКРАНОВ (2556px и больше) ===== */
-@media (min-width: 2556px) {
-    .container {
-        max-width: 1600px !important;
-        margin: 0 auto !important;
-        padding: 0 60px !important;
-    }
-    
-    .catalog-grid,
-    .favorites-grid {
-        grid-template-columns: repeat(5, 1fr) !important;
-        gap: 48px !important;
-    }
-    
-    .hero h1 {
-        font-size: 80px !important;
-    }
-    
-    .hero-text {
-        font-size: 24px !important;
     }
 }
