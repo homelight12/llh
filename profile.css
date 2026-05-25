@@ -47,24 +47,6 @@ h1, .logo, .auth-title, .success-title {
     font-weight: 800;
 }
 
-.nav a, 
-.profile-subtitle,
-.empty-state p,
-.form-group label,
-.form-group input,
-.save-btn,
-.logout-btn,
-.tab-btn,
-.footer-links a,
-.search-box input,
-.auth-note,
-.auth-btn,
-.success-text,
-.success-btn {
-    font-family: 'Gothic60', 'Manrope', sans-serif;
-    font-weight: 400;
-}
-
 .container {
     width: 1200px;
     margin: 0 auto;
@@ -74,98 +56,6 @@ h1, .logo, .auth-title, .success-title {
 .divider {
     border: none;
     border-top: 1px solid #ddd;
-}
-
-/* ===== HEADER ===== */
-.header {
-    padding: 25px 0 35px;
-}
-
-.header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    letter-spacing: 2px;
-    font-size: 24px;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-    opacity: 0.8;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav a {
-    text-decoration: none;
-    font-size: 14px;
-    color: #111;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #a6a86c;
-}
-
-.icon {
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.icon svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 1.8;
-    transition: all 0.3s ease;
-}
-
-.icon-profile:hover svg,
-.active-profile svg {
-    stroke: #a6a86c;
-}
-
-.search-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    border: 1.5px solid #111;
-    border-radius: 20px;
-    padding: 6px 14px;
-    width: 320px;
-    transition: border-color 0.3s ease;
-}
-
-.search-box:focus-within {
-    border-color: #a6a86c;
-}
-
-.search-box svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
-.search-box input {
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 14px;
 }
 
 /* ===== PROFILE SECTION ===== */
@@ -178,7 +68,6 @@ h1, .logo, .auth-title, .success-title {
     text-align: left;
 }
 
-/* Аутентификация */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -214,6 +103,7 @@ h1, .logo, .auth-title, .success-title {
     border: 1.5px solid #e0e0e0;
     border-radius: 14px;
     font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     transition: all 0.3s ease;
 }
 
@@ -229,6 +119,7 @@ h1, .logo, .auth-title, .success-title {
     padding: 14px;
     border-radius: 30px;
     font-size: 16px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
@@ -240,12 +131,13 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .auth-note {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 12px;
     color: #888;
     margin-top: 20px;
 }
 
-/* Профиль (авторизован) */
 .profile-header {
     display: flex;
     align-items: center;
@@ -268,11 +160,12 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .profile-subtitle {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 16px;
     color: #666;
 }
 
-/* Вкладки */
 .profile-tabs {
     display: flex;
     gap: 15px;
@@ -286,6 +179,7 @@ h1, .logo, .auth-title, .success-title {
     border: none;
     padding: 12px 28px;
     font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     color: #666;
@@ -310,7 +204,6 @@ h1, .logo, .auth-title, .success-title {
     display: block;
 }
 
-/* Пустое состояние */
 .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -324,6 +217,8 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .empty-state p {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 14px;
     color: #888;
     margin-bottom: 25px;
@@ -337,6 +232,7 @@ h1, .logo, .auth-title, .success-title {
     text-decoration: none;
     border-radius: 30px;
     font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
@@ -347,7 +243,6 @@ h1, .logo, .auth-title, .success-title {
     transform: scale(1.02);
 }
 
-/* Форма настроек */
 .profile-form {
     background: white;
     padding: 35px;
@@ -370,6 +265,8 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .form-group label {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 13px;
     color: #555;
     letter-spacing: 0.5px;
@@ -380,6 +277,7 @@ h1, .logo, .auth-title, .success-title {
     border: 1.5px solid #e0e0e0;
     border-radius: 14px;
     font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     transition: all 0.3s ease;
     background: #fafafa;
 }
@@ -397,6 +295,7 @@ h1, .logo, .auth-title, .success-title {
     padding: 14px 40px;
     border-radius: 30px;
     font-size: 16px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     width: auto;
@@ -415,6 +314,7 @@ h1, .logo, .auth-title, .success-title {
     padding: 12px 40px;
     border-radius: 30px;
     font-size: 14px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     width: auto;
@@ -427,7 +327,6 @@ h1, .logo, .auth-title, .success-title {
     color: white;
 }
 
-/* Успешная регистрация */
 .success-container {
     display: flex;
     flex-direction: column;
@@ -453,6 +352,8 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .success-text {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 16px;
     color: #666;
     margin-bottom: 40px;
@@ -484,6 +385,8 @@ h1, .logo, .auth-title, .success-title {
 }
 
 .footer-links a {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     text-decoration: none;
     font-size: 14px;
     color: #111;
@@ -494,4 +397,85 @@ h1, .logo, .auth-title, .success-title {
     color: #a6a86c;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+@media (max-width: 1200px) {
+    .container {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .profile-title {
+        font-size: 42px;
+        text-align: center;
+    }
+    
+    .profile-card {
+        padding: 25px;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+    }
+    
+    .profile-name {
+        font-size: 22px;
+    }
+    
+    .profile-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    .stat-value {
+        font-size: 22px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+    
+    .footer-links .col {
+        align-items: center;
+    }
+}

@@ -2,9 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Корзина — HOMELIGHT</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="trashbin.css">
     <link rel="stylesheet" href="cart-notification.css">
@@ -12,45 +13,52 @@
 <body>
 
 <header class="header">
-    <div class="container header-row">
-        <a href="index.html" class="logo">HOMELIGHT</a>
+    <div class="container">
+        <div class="header-row">
+            <a href="index.html" class="logo">HOMELIGHT</a>
+            
+            <!-- Обертка для меню и иконок вместе -->
+            <div class="nav-wrapper">
+                <!-- Ссылки меню -->
+                <nav class="nav-links">
+                    <a href="catalog.html">каталог</a>
+                    <a href="delivery.html">доставка</a>
+                    <a href="about.html">о нас</a>
+                    <a href="contact.html">контакты</a>
+                </nav>
+                
+                <!-- Иконки (будут справа от меню на десктопе) -->
+                <div class="nav-icons">
+                    <a href="favorites.html" class="icon icon-favorite">
+                        <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20.8 8.6c0 5-8.8 11-8.8 11S3.2 13.6 3.2 8.6c0-2.6 2-4.6 4.6-4.6 1.6 0 3 .8 3.8 2.1C12.4 4.8 13.8 4 15.4 4c2.6 0 4.6 2 4.6 4.6z"/>
+                        </svg>
+                    </a>
+                    <a href="profile.html" class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c2.5-4 5.5-6 8-6s5.5 2 8 6"/>
+                        </svg>
+                    </a>
+                    <a href="trashbin.html" class="icon cart-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 4h2l2 10h10l2-7H6"/>
+                            <circle cx="9" cy="20" r="1.5"/>
+                            <circle cx="17" cy="20" r="1.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <nav class="nav">
-            <a href="catalog.html">каталог</a>
-            <a href="delivery.html">доставка</a>
-            <a href="about.html">о нас</a>
-             <a href="contact.html">контакты</a>
-
-            <a href="favorites.html" class="icon icon-favorite">
-                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M20.8 8.6c0 5-8.8 11-8.8 11S3.2 13.6 3.2 8.6c0-2.6 2-4.6 4.6-4.6 1.6 0 3 .8 3.8 2.1C12.4 4.8 13.8 4 15.4 4c2.6 0 4.6 2 4.6 4.6z"/>
-                </svg>
-            </a>
-
-            <a href="profile.html" class="icon">
+        <div class="search-wrapper">
+            <div class="search-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M4 20c2.5-4 5.5-6 8-6s5.5 2 8 6"/>
+                    <circle cx="11" cy="11" r="7"/>
+                    <line x1="20" y1="20" x2="16.5" y2="16.5"/>
                 </svg>
-            </a>
-
-            <a href="trashbin.html" class="icon cart-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M3 4h2l2 10h10l2-7H6"/>
-                    <circle cx="9" cy="20" r="1.5"/>
-                    <circle cx="17" cy="20" r="1.5"/>
-                </svg>
-            </a>
-        </nav>
-    </div>
-
-    <div class="search-wrapper">
-        <div class="search-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="11" cy="11" r="7"/>
-                <line x1="20" y1="20" x2="16.5" y2="16.5"/>
-            </svg>
-            <input type="text" id="searchInput" placeholder="Поиск...">
+                <input type="text" id="searchInput" placeholder="Поиск...">
+            </div>
         </div>
     </div>
 </header>
@@ -107,12 +115,12 @@
                 <a href="catalog.html">каталог</a>
             </div>
             <div class="col">
-                <a href="#">доставка</a>
-                <a href="#">избранное</a>
+                <a href="delivery.html">доставка</a>
+                <a href="favorites.html">избранное</a>
             </div>
             <div class="col">
                 <a href="trashbin.html">корзина</a>
-                <a href="#">контакты</a>
+                <a href="contact.html">контакты</a>
             </div>
         </div>
     </div>
@@ -120,6 +128,7 @@
 
 <script src="product-data.js"></script>
 <script src="cart.js"></script>
+<script src="favorites.js"></script>
 <script>
     function renderCart() {
         const items = cart.getItems();
@@ -134,9 +143,11 @@
         if (items.length === 0) {
             cartItemsDiv.innerHTML = '';
             emptyCartDiv.style.display = 'block';
-            document.querySelector('.bottom-line').style.display = 'none';
-            document.querySelector('.summary').style.opacity = '0.5';
-            checkoutBtn.style.display = 'none';
+            const bottomLine = document.querySelector('.bottom-line');
+            const summary = document.querySelector('.summary');
+            if (bottomLine) bottomLine.style.display = 'none';
+            if (summary) summary.style.opacity = '0.5';
+            if (checkoutBtn) checkoutBtn.style.display = 'none';
             subtotalSpan.textContent = '0 ₽';
             totalQuantitySpan.textContent = '00';
             deliverySpan.textContent = '0 ₽';
@@ -145,9 +156,11 @@
         }
         
         emptyCartDiv.style.display = 'none';
-        document.querySelector('.bottom-line').style.display = 'block';
-        document.querySelector('.summary').style.opacity = '1';
-        checkoutBtn.style.display = 'block';
+        const bottomLine = document.querySelector('.bottom-line');
+        const summary = document.querySelector('.summary');
+        if (bottomLine) bottomLine.style.display = 'block';
+        if (summary) summary.style.opacity = '1';
+        if (checkoutBtn) checkoutBtn.style.display = 'block';
         
         cartItemsDiv.innerHTML = items.map(item => `
             <div class="cart-item" data-id="${item.id}" style="animation: fadeInUp 0.5s ease;">
@@ -185,9 +198,11 @@
         totalSpan.textContent = (subtotal + delivery).toLocaleString('ru-RU') + ' ₽';
         
         [subtotalSpan, totalQuantitySpan, deliverySpan, totalSpan].forEach(el => {
-            el.style.animation = 'none';
-            el.offsetHeight;
-            el.style.animation = 'fadeInUp 0.3s ease';
+            if (el) {
+                el.style.animation = 'none';
+                el.offsetHeight;
+                el.style.animation = 'fadeInUp 0.3s ease';
+            }
         });
     }
     
@@ -201,13 +216,16 @@
         renderCart();
     }
     
-    document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-        if (cart.getItems().length > 0) {
-            alert('Спасибо за заказ! Наш менеджер свяжется с вами в ближайшее время.');
-            cart.clearCart();
-            renderCart();
-        }
-    });
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.getItems().length > 0) {
+                alert('Спасибо за заказ! Наш менеджер свяжется с вами в ближайшее время.');
+                cart.clearCart();
+                renderCart();
+            }
+        });
+    }
     
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
@@ -215,9 +233,13 @@
             if (e.key === 'Enter') {
                 const query = this.value.trim().toLowerCase();
                 if (query === 'каталог') window.location.href = 'catalog.html';
+                else if (query === 'доставка') window.location.href = 'delivery.html';
                 else if (query === 'о нас') window.location.href = 'about.html';
                 else if (query === 'главная') window.location.href = 'index.html';
                 else if (query === 'корзина') window.location.href = 'trashbin.html';
+                else if (query === 'контакты') window.location.href = 'contact.html';
+                else if (query === 'избранное') window.location.href = 'favorites.html';
+                else if (query === 'профиль') window.location.href = 'profile.html';
                 else alert('По запросу "' + query + '" ничего не найдено');
             }
         });
@@ -239,6 +261,5 @@
     
     renderCart();
 </script>
-<script src="favorites.js"></script>
 </body>
 </html>

@@ -13,45 +13,52 @@
 <body>
 
 <header class="header">
-    <div class="container header-row">
-        <a href="index.html" class="logo">HOMELIGHT</a>
+    <div class="container">
+        <div class="header-row">
+            <a href="index.html" class="logo">HOMELIGHT</a>
+            
+            <!-- Обертка для меню и иконок вместе -->
+            <div class="nav-wrapper">
+                <!-- Ссылки меню -->
+                <nav class="nav-links">
+                    <a href="catalog.html">каталог</a>
+                    <a href="delivery.html">доставка</a>
+                    <a href="about.html">о нас</a>
+                    <a href="contact.html">контакты</a>
+                </nav>
+                
+                <!-- Иконки (будут справа от меню на десктопе) -->
+                <div class="nav-icons">
+                    <a href="favorites.html" class="icon icon-favorite">
+                        <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20.8 8.6c0 5-8.8 11-8.8 11S3.2 13.6 3.2 8.6c0-2.6 2-4.6 4.6-4.6 1.6 0 3 .8 3.8 2.1C12.4 4.8 13.8 4 15.4 4c2.6 0 4.6 2 4.6 4.6z"/>
+                        </svg>
+                    </a>
+                    <a href="profile.html" class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c2.5-4 5.5-6 8-6s5.5 2 8 6"/>
+                        </svg>
+                    </a>
+                    <a href="trashbin.html" class="icon cart-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 4h2l2 10h10l2-7H6"/>
+                            <circle cx="9" cy="20" r="1.5"/>
+                            <circle cx="17" cy="20" r="1.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <nav class="nav">
-            <a href="catalog.html">каталог</a>
-            <a href="delivery.html">доставка</a>
-            <a href="about.html">о нас</a>
-             <a href="contact.html">контакты</a>
-
-            <a href="favorites.html" class="icon icon-favorite">
-                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M20.8 8.6c0 5-8.8 11-8.8 11S3.2 13.6 3.2 8.6c0-2.6 2-4.6 4.6-4.6 1.6 0 3 .8 3.8 2.1C12.4 4.8 13.8 4 15.4 4c2.6 0 4.6 2 4.6 4.6z"/>
-                </svg>
-            </a>
-
-            <a href="profile.html" class="icon">
+        <div class="search-wrapper">
+            <div class="search-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M4 20c2.5-4 5.5-6 8-6s5.5 2 8 6"/>
+                    <circle cx="11" cy="11" r="7"/>
+                    <line x1="20" y1="20" x2="16.5" y2="16.5"/>
                 </svg>
-            </a>
-
-            <a href="trashbin.html" class="icon cart-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M3 4h2l2 10h10l2-7H6"/>
-                    <circle cx="9" cy="20" r="1.5"/>
-                    <circle cx="17" cy="20" r="1.5"/>
-                </svg>
-            </a>
-        </nav>
-    </div>
-
-    <div class="search-wrapper">
-        <div class="search-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <circle cx="11" cy="11" r="7"/>
-                <line x1="20" y1="20" x2="16.5" y2="16.5"/>
-            </svg>
-            <input type="text" id="searchInput" placeholder="Поиск...">
+                <input type="text" id="searchInput" placeholder="Поиск...">
+            </div>
         </div>
     </div>
 </header>

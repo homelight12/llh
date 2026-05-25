@@ -20,45 +20,13 @@
     font-display: swap;
 }
 
-html {
-    overflow-x: hidden;
-}
-
 body {
-    overflow-x: hidden;
-    width: 100%;
     background: #f3f3f3;
     font-family: 'Gothic60', 'Manrope', sans-serif;
     color: #111;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-button, input, select, textarea {
-    font-size: 16px;
-}
-
-/* Заголовки - Widock Trial */
-h1, .logo, .contacts-info h1, .footer-logo, .page-title {
-    font-family: 'Widock Trial', 'Manrope', sans-serif;
-    font-weight: 800;
-}
-
-/* Основной текст - Gothic60 */
-.nav a, 
-.footer-links a,
-.search-box input,
-.contact-label,
-.contact-value,
-.contact-value a {
-    font-family: 'Gothic60', 'Manrope', sans-serif;
-    font-weight: 400;
 }
 
 .container {
@@ -70,108 +38,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 .divider {
     border: none;
     border-top: 1px solid #ddd;
-}
-
-/* ===== HEADER ===== */
-.header {
-    padding: 25px 0 35px;
-}
-
-.header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    letter-spacing: 2px;
-    font-size: 24px;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-    opacity: 0.8;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav a {
-    text-decoration: none;
-    font-size: 14px;
-    color: #111;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #a6a86c;
-}
-
-.nav a.active {
-    color: #a6a86c;
-}
-
-/* Иконки */
-.icon {
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.icon svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 1.8;
-    transition: all 0.3s ease;
-}
-
-.icon-favorite:hover svg {
-    stroke: #FF6161 !important;
-    fill: #FF6161 !important;
-}
-
-.icon:not(.icon-favorite):hover svg {
-    stroke: #a6a86c;
-}
-
-/* ===== SEARCH ===== */
-.search-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    border: 1.5px solid #111;
-    border-radius: 20px;
-    padding: 6px 14px;
-    width: 320px;
-    transition: border-color 0.3s ease;
-}
-
-.search-box:focus-within {
-    border-color: #a6a86c;
-}
-
-.search-box svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
-.search-box input {
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 14px;
 }
 
 /* ===== КОНТАКТНАЯ СТРАНИЦА ===== */
@@ -193,6 +59,8 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 }
 
 .page-title {
+    font-family: 'Widock Trial', 'Manrope', sans-serif;
+    font-weight: 800;
     font-size: 60px;
     letter-spacing: 2px;
     margin: 0 0 30px 0;
@@ -215,6 +83,8 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 }
 
 .contact-label {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     font-size: 13px;
     font-weight: 500;
     text-transform: uppercase;
@@ -230,8 +100,9 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 }
 
 .contact-value {
-    font-size: 22px;
+    font-family: 'Gothic60', 'Manrope', sans-serif;
     font-weight: 400;
+    font-size: 22px;
     color: #111;
     display: flex;
     align-items: center;
@@ -251,7 +122,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
     border-color: #a6a86c;
 }
 
-/* Правая колонка - карточка с картинкой */
 .contacts-map-card {
     flex: 0.9;
     border-radius: 0 24px 0 24px;
@@ -319,6 +189,8 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 }
 
 .footer-links a {
+    font-family: 'Gothic60', 'Manrope', sans-serif;
+    font-weight: 400;
     text-decoration: none;
     font-size: 13px;
     color: #3a3a3a;
@@ -327,22 +199,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 
 .footer-links a:hover {
     color: #a6a86c;
-}
-
-/* ===== АНИМАЦИИ ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.contacts-info, .contacts-map-card {
-    animation: fadeInUp 0.6s ease;
 }
 
 /* ===== АДАПТАЦИЯ ===== */
@@ -356,18 +212,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
-    }
-
-    .header-row {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
     }
 
     .contacts-grid {
@@ -394,7 +238,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
         max-width: 500px;
         margin: 0 auto;
         width: 100%;
-        border-radius: 0 24px 0 24px;
     }
 
     .footer-content {
@@ -417,7 +260,6 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
 @media (max-width: 480px) {
     .page-title {
         font-size: 32px;
-        letter-spacing: 1px;
     }
 
     .contact-value {
@@ -428,50 +270,4 @@ h1, .logo, .contacts-info h1, .footer-logo, .page-title {
         width: 90%;
         max-width: 280px;
     }
-
-    .nav {
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 12px;
-    }
-    /* ===== ТОЛЬКО МОБИЛЬНАЯ ВЕРСИЯ ===== */
-@media (max-width: 768px) {
-    .header-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .header-row > a:first-child {
-        order: 1;
-    }
-    
-    .header-row .icon,
-    .header-row a.icon {
-        order: 0;
-        display: inline-flex;
-    }
-    
-    .nav {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    .search-wrapper {
-        order: 3;
-        width: 100%;
-    }
-    
-    .footer-links {
-        flex-direction: row;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-}
-
 }

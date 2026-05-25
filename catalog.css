@@ -45,110 +45,7 @@ button, input, select, textarea {
     text-align: center;
 }
 
-.header {
-    padding: 25px 0 35px;
-}
-
-.header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Widock Trial', 'Manrope', sans-serif;
-    font-weight: 800;
-    letter-spacing: 2px;
-    font-size: 24px;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.3s;
-}
-
-.logo:hover {
-    opacity: 0.8;
-}
-
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav a {
-    font-family: 'Gothic60', 'Manrope', sans-serif;
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 14px;
-    color: #111;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    color: #a6a86c;
-}
-
-.nav a.active {
-    color: #a6a86c;
-}
-
-.icon {
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.icon svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 1.8;
-    transition: all 0.3s ease;
-}
-
-.icon-favorite:hover svg {
-    stroke: #FF6161 !important;
-    fill: #FF6161 !important;
-}
-
-.icon:not(.icon-favorite):hover svg {
-    stroke: #a6a86c;
-}
-
-.search-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    border: 1.5px solid #111;
-    border-radius: 20px;
-    padding: 6px 14px;
-    width: 320px;
-    transition: border-color 0.3s;
-}
-
-.search-box:focus-within {
-    border-color: #a6a86c;
-}
-
-.search-box svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
-.search-box input {
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 14px;
-    font-family: 'Gothic60', 'Manrope', sans-serif;
-}
-
+/* ===== CATALOG ===== */
 .catalog {
     padding: 0 0 60px 0;
 }
@@ -266,6 +163,7 @@ button, input, select, textarea {
     color: white;
 }
 
+/* ===== FOOTER ===== */
 .footer {
     background: #e6e6e6;
     padding: 40px 0;
@@ -303,23 +201,11 @@ button, input, select, textarea {
     color: #a6a86c;
 }
 
-/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+/* ===== АДАПТАЦИЯ ===== */
 @media (max-width: 768px) {
     .container {
         width: 100%;
         padding: 0 20px;
-    }
-
-    .header-row {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
     }
 
     .catalog h1 {
@@ -370,14 +256,6 @@ button, input, select, textarea {
         max-width: 280px;
     }
 
-    .nav {
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 12px;
-    }
-
     .card p {
         font-size: 14px;
     }
@@ -392,5 +270,4 @@ button, input, select, textarea {
         font-size: 12px;
         margin: 0 3px;
     }
-  
 }
